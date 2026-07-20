@@ -6,6 +6,12 @@
 <title>雙子油飯記帳</title>
 <meta name="description" content="雙子油飯每日記帳 App" />
 
+<!-- 提早跟這兩個網域建立連線，減少第一次打開時的等待時間 -->
+<link rel="preconnect" href="https://esm.sh" crossorigin />
+<link rel="preconnect" href="https://unpkg.com" crossorigin />
+<link rel="dns-prefetch" href="https://esm.sh" />
+<link rel="dns-prefetch" href="https://unpkg.com" />
+
 <!-- PWA -->
 <link rel="manifest" href="./manifest.json" />
 <meta name="theme-color" content="#7A5B3E" />
@@ -18,7 +24,7 @@
 <style>
   html, body { margin: 0; padding: 0; background: #F6F1E7; }
   #root { min-height: 100vh; }
-  #boot-loading { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100vh; font-family: -apple-system, sans-serif; color:#93816F; }
+  #boot-loading { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100vh; font-family: -apple-system, sans-serif; color:#93816F; text-align:center; padding: 0 32px; line-height:1.6; }
 </style>
 
 <!-- window.storage shim backed by localStorage, so the app code (originally written -->
@@ -89,7 +95,7 @@
 <script src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js"></script>
 </head>
 <body>
-  <div id="root"><div id="boot-loading">載入中…</div></div>
+  <div id="root"><div id="boot-loading">載入中，第一次打開會慢一點，之後就會快很多…</div></div>
 
   <script type="text/babel" data-type="module" data-presets="react" src="./app.js"></script>
 
